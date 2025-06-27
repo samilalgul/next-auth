@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
 import React from "react";
+import LogoutButton from "./Logout";
 
 const Navbar = () => {
     const { data: session, status } = useSession();
@@ -17,7 +18,6 @@ const Navbar = () => {
         roleFromSession === "admin" ? "admin" :
             roleFromSession === "user" ? "user" :
                 null;
-                console.log("role",role)
     return (
         <nav className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,15 +29,12 @@ const Navbar = () => {
 
                     {/* Navigation Links */}
                     <div className="hidden md:flex space-x-6">
-                        {/* Herkes için link */}
                         <a
                             href="/"
                             className="hover:bg-indigo-500 px-3 py-2 rounded-md text-sm font-medium"
                         >
                             Home
                         </a>
-
-                        {/* User rolünde ve adminde görünür */}
                         {(role === "user" || role === "admin") && (
                             <a
                                 href="/dashboard"
@@ -46,8 +43,6 @@ const Navbar = () => {
                                 Dashboard
                             </a>
                         )}
-
-                        {/* Sadece admin */}
                         {role === "admin" && (
                             <>
                                 <a
@@ -65,7 +60,6 @@ const Navbar = () => {
                             </>
                         )}
 
-                        {/* Herkes için */}
                         {(role === "user" || role === "admin") && (
                             <a
                                 href="/profile"
@@ -74,6 +68,8 @@ const Navbar = () => {
                                 Profile
                             </a>
                         )}
+                            <LogoutButton />
+
                     </div>
                 </div>
             </div>

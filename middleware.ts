@@ -30,7 +30,10 @@ export async function middleware(req: NextRequest) {
   }
   // /login and /api/auth are public so should be reachable for anyone
   const isPublicPath =
-    pathname === "/login" || pathname.startsWith("/api/auth") || pathname.startsWith("/api/rolePermission");
+    pathname === "/login" ||
+    pathname.startsWith("/api/auth") ||
+    pathname.startsWith("/api/rolePermission")
+    || pathname.startsWith("/api/logout");
   if (isPublicPath) {
     return NextResponse.next();
   }
