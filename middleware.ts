@@ -3,24 +3,6 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { getRolePermissions } from "./lib/services/roleService";
 
-// Access control map
-const accessControlMap: Record<string, string[]> = {
-  "/admin": ["admin"],
-  "/admin/settings": ["admin"],
-  "/dashboard": ["admin", "user"],
-  "/profile": ["admin", "user"],
-};
-
-function hasAccess(pathname: string, role: string | undefined): boolean {
-  for (const path in accessControlMap) {
-    if (pathname.startsWith(path)) {
-      const allowedRoles = accessControlMap[path];
-      return allowedRoles.includes(role || "");
-    }
-  }
-  return true; // default public
-}
-
 export async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
   const { pathname } = req.nextUrl;

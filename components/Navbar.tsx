@@ -69,7 +69,7 @@ const Navbar = () => {
                                 Profile
                             </Link>
                         )}
-                            <LogoutButton />
+                            {role && <LogoutButton />}
 
                     </div>
                 </div>
