@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 import LogoutButton from "./Logout";
+import Link from "next/link";
 
 const Navbar = () => {
     const { data: session, status } = useSession();
@@ -29,44 +30,44 @@ const Navbar = () => {
 
                     {/* Navigation Links */}
                     <div className="hidden md:flex space-x-6">
-                        <a
+                        <Link
                             href="/"
                             className="hover:bg-indigo-500 px-3 py-2 rounded-md text-sm font-medium"
                         >
                             Home
-                        </a>
+                        </Link>
                         {(role === "user" || role === "admin") && (
-                            <a
+                            <Link
                                 href="/dashboard"
                                 className="hover:bg-indigo-500 px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Dashboard
-                            </a>
+                            </Link>
                         )}
                         {role === "admin" && (
                             <>
-                                <a
+                                <Link
                                     href="/admin"
                                     className="hover:bg-indigo-500 px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     Admin Panel
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="/admin/settings"
                                     className="hover:bg-indigo-500 px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     Settings
-                                </a>
+                                </Link>
                             </>
                         )}
 
                         {(role === "user" || role === "admin") && (
-                            <a
+                            <Link
                                 href="/profile"
                                 className="hover:bg-indigo-500 px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Profile
-                            </a>
+                            </Link>
                         )}
                             <LogoutButton />
 
