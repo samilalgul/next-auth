@@ -91,9 +91,9 @@ docker run -p 3000:3000 --env-file .env my-nextapp
 
 ## Logout Handling with Auth0
 
--Custom /api/auth/logout endpoint redirects to Auth0’s logout endpoint to clear cookies both on app domain and Auth0 domain.
+- Custom /api/auth/logout endpoint redirects to Auth0’s logout endpoint to clear cookies both on app domain and Auth0 domain.
 
--Ensures proper sign-out without automatic re-login.
+- Ensures proper sign-out without automatic re-login.
 ---
 
 ## 12Factor App Compliance
