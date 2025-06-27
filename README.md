@@ -98,3 +98,6 @@ docker run -p 3000:3000 --env-file .env my-nextapp
 -Separate dev, test, and production environments.
 -Logs output to console for centralized logging.
 ---
+
+##Contact
+Şamil Algül - samilalgul@softcaveware.com
