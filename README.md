@@ -46,21 +46,25 @@ AUTH0_ISSUER_BASE_URL=https://your-auth0-domain/
 NEXTAUTH_SECRET=your-nextauth-secret
 NEXTAUTH_URL=http://localhost:3000
 ROLE_CACHE_TTL=300000  # Cache duration for role permissions in milliseconds (optional)
-BASE_URL=domain-where-project-deployed```
+BASE_URL=domain-where-project-deployed
+```
 
 ## Installation
 
 ```bash
-npm install```
+npm install
+```
 
 ##Run Development Server
 ```bash
-npm run dev```
+npm run dev
+```
 
 ##Running with Docker
 ```bash
 docker build -t my-nextapp .
-docker run -p 3000:3000 --env-file .env my-nextapp```
+docker run -p 3000:3000 --env-file .env my-nextapp
+```
 
 ##Project Structure
 ```bash
@@ -72,7 +76,8 @@ docker run -p 3000:3000 --env-file .env my-nextapp```
 /middleware.ts          # Authorization middleware
 /Dockerfile             # Docker image configuration
 /docker-compose.yml     # Docker Compose configuration
-/.env                   # Environment variables```
+/.env                   # Environment variables
+```
 
 ---
 ## Middleware and Authorization
