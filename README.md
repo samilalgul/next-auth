@@ -82,11 +82,11 @@ docker run -p 3000:3000 --env-file .env my-nextapp
 ---
 ## Middleware and Authorization
 
--Middleware verifies JWT token on each request.
--Role-based access is checked dynamically via cached permissions fetched from API.
--Public paths (login, auth API) are open.
--Unauthorized or unauthenticated users get redirected accordingly.
--Prevents logged-in users from accessing login page unnecessarily.
+- Middleware verifies JWT token on each request.
+- Role-based access is checked dynamically via cached permissions fetched from API.
+- Public paths (login, auth API) are open.
+- Unauthorized or unauthenticated users get redirected accordingly.
+- Prevents logged-in users from accessing login page unnecessarily.
 ---
 
 ## Logout Handling with Auth0
@@ -98,11 +98,11 @@ docker run -p 3000:3000 --env-file .env my-nextapp
 
 ## 12Factor App Compliance
 
--Configuration stored in environment variables.
--Stateless service design.
--Separate dev, test, and production environments.
--Logs output to console for centralized logging.
+- Configuration stored in environment variables.
+- Stateless service design.
+- Separate dev, test, and production environments.
+- Logs output to console for centralized logging.
 ---
 
-##Contact
+## Contact
 Şamil Algül - samilalgul@softcaveware.com
